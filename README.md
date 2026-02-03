@@ -40,3 +40,29 @@ The Lambda execution role uses least-privilege permissions:
 - Add CloudWatch alarms
 - Add image size validation
 - Add tagging for processed objects
+
+
+## IAM Least Privilege Policy
+
+The Lambda function uses a custom IAM execution role with minimum permissions:
+
+- Read objects from the source S3 bucket
+- Write objects to the destination S3 bucket
+- Publish alerts to an SNS topic
+- Write logs to CloudWatch
+
+The policy JSON is available in:
+`iam-policy/iam-least-privilege-policy.json`
+
+## SNS Notifications
+
+An Amazon SNS topic is used to send email notifications when:
+
+- An image is successfully moved to the destination bucket
+- An error occurs during Lambda execution
+
+The SNS topic configuration is documented in:
+`SNS/sns-topic.json`
+
+Email was chosen over SMS to avoid additional costs and remain within the AWS Free Tier.
+
