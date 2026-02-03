@@ -4,8 +4,8 @@ import urllib.parse
 s3 = boto3.client('s3')
 sns = boto3.client('sns')
 
-SOURCE_BUCKET = "SOURCE-BUCKET"
-DESTINATION_BUCKET = "DEST-BUCKET"
+SOURCE_BUCKET = "SOURCE-BUCKET-NAME"
+DESTINATION_BUCKET = "DEST-BUCKET-NAME"
 SNS_TOPIC_ARN = "YOUR-SNS-TOPIC-ARN"
 
 def lambda_handler(event, context):
